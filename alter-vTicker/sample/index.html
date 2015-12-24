@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="css.css" type="text/css"media="screen">
+<script src="../../common/lib/jquery-1.11.1.min.js"></script>
+<script src="vTickerAlter.js"></script>
+<div id="example">
+  <ul>
+    <li>jquery 1111111111</li>
+    <li>HTML5 2222222222</li>
+    <li>jquery 1111111111</li>
+    <li>HTML5 2222222222</li>
+  </ul>
+</div>
+
+
+<script type="text/javascript">
+$(function() {
+    $('#example').vTickerAlter({      
+        speed: 700,           //滚动速度，单位毫秒。
+		pause: 1000,            //暂停时间，就是滚动一条之后停留的时间，单位毫秒。                          
+		showItems: 3,           //显示内容的条数。                          
+		mousePause: true,       //鼠标移动到内容上是否暂停滚动，默认为true。                           
+		height: 0,              //滚动内容的高度。
+		direction: 'up' ,      //滚动的方向，默认为up向上，down则为向下滚动。                           
+		animation: 'fade',    //动画效果，默认是fade，淡出。    
+		mousePause: true,      //鼠标移动到内容上是否暂停滚动，默认为true。
+		startPaused: false
+		
+     
+    });
+	
+	
+});
+
+
+
+</script>
