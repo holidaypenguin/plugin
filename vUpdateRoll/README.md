@@ -5,11 +5,11 @@
 div#test1 ul li  移除margin、padding，只是作为骨架来展示内容，如果需要额外的功能，需要在外层嵌套控制样式的dom。
 
 \<div class="wrap"> // 给内层提供显示位置<br>
-	\<div id="test1" class="example"> // 作为包裹ul的容器，将移除margin、padding，紧紧包裹ul，如果需要控制显示，可在外层div添加css。<br>
-		\<ul> // 移除margin、padding<br>
-			\<li></li> // 移除margin、padding<br>
-		\</ul><br>
-	\</div><br>
+\	\<div id="test1" class="example"> // 作为包裹ul的容器，将移除margin、padding，紧紧包裹ul，如果需要控制显示，可在外层div添加css。<br>
+\		\<ul> // 移除margin、padding<br>
+\			\<li></li> // 移除margin、padding<br>
+\		\</ul><br>
+\	\</div><br>
 \</div><br>
 
 # vUpdateRoll-0.1
