@@ -1,31 +1,31 @@
 /*
-	垂直滚动更新
+垂直滚动更新
 	
-	1. 简单例子
-	js
-	// 初始化成功后事件，可启动后续添加数据代码。
-	$('#test1').bind("vuRoll.afterInit", function(){
-		$(this).trigger("vuRoll.addData", {data: ["test"]});
-		var i = 1;
-		setInterval(function(){
-			$('#test1').trigger("vuRoll.addData", {data: [i++, i++, i++]});
-		}, 1000);
-	});
-	$('#test1').vUpdateRoll({      
-        speed: 400,
-		pause: 1000,
-		showItems: 4,
-		itemHeight: 30,		// 要设置此项，否则可能导致不显示内容，设置时需要计算该处使用的数值
-		direction: 'down'
-		
-    });
+1. 简单例子
+js
+// 初始化成功后事件，可启动后续添加数据代码。
+$('#test1').bind("vuRoll.afterInit", function(){
+	$(this).trigger("vuRoll.addData", {data: ["test"]});
+	var i = 1;
+	setInterval(function(){
+		$('#test1').trigger("vuRoll.addData", {data: [i++, i++, i++]});
+	}, 1000);
+});
+$('#test1').vUpdateRoll({      
+	speed: 400,
+	pause: 1000,
+	showItems: 4,
+	itemHeight: 30,		// 要设置此项，否则可能导致不显示内容，设置时需要计算该处使用的数值
+	direction: 'down'
 	
-	html
-	<div class="wrap"> // 给内层提供显示位置
-		<div id="test1" class="example"> // 作为包裹ul的容器，将移除margin、padding，紧紧包裹ul，如果需要控制显示，可在外层div添加css。
-			<ul></ul>
-		</div>
+});
+
+html
+<div class="wrap"> // 给内层提供显示位置
+	<div id="test1" class="example"> // 作为包裹ul的容器，将移除margin、padding，紧紧包裹ul，如果需要控制显示，可在外层div添加css。
+		<ul></ul>
 	</div>
+</div>
 	
 	
 */
