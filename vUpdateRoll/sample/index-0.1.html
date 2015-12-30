@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="111.css" type="text/css"media="screen">
+<script src="../../common/lib/jquery-1.11.1.min.js"></script>
+<script src="../vUpdateRoll-0.1.js"></script>
+<style>
+	#test1{}
+	#test1 ul{}
+	#test1 ul li{}
+</style>
+<div class="wrap">
+<div class="wrap" id="example">
+  <ul>
+  </ul>
+</div>
+</div>
+
+<div class="wrap">
+	<div id="test1" class="example">
+		<ul></ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	$('#example').bind("vuRoll.afterInit", function(){
+		
+		$(this).trigger("vuRoll.addData", {data: ["test"]});
+		
+		setInterval(function(){
+			$('#example').trigger("vuRoll.addData", {data: ["sssss"+new Date().getTime(), "ddd"+new Date().getTime(), "eeee"+new Date().getTime()]});
+		}, 1000);
+	});
+    $('#example').vUpdateRoll({
+        speed: 400,           //滚动速度，单位毫秒。
+		pause: 1000,            //暂停时间，就是滚动一条之后停留的时间，单位毫秒。                          
+		showItems: 2,           //显示内容的条数。 
+		itemHeight: 30,
+		direction: 'up',       //滚动的方向，默认为up向上，down则为向下滚动。  
+		getUpdataRoll: function(data){
+			var updataRollDom = [], i = 0;
+			if(!data || data.length < 1){
+				return updataRollDom;
+			}
+			for(i = 0; i < data.length; i++){
+				updataRollDom[i] = "<li>-----------"+data[i]+"--------------</li>";
+			}
+			return updataRollDom;
+		}
+    });
+	
+	$('#test1').bind("vuRoll.afterInit", function(){
+		$(this).trigger("vuRoll.addData", {data: ["test"]});
+		var i = 1;
+		setInterval(function(){
+			$('#test1').trigger("vuRoll.addData", {data: [i++, i++, i++]});
+		}, 1000);
+	});
+	$('#test1').vUpdateRoll({      
+        speed: 400,
+		pause: 1000,
+		showItems: 4,
+		itemHeight: 30,
+		direction: 'down'
+		
+    });
+	
+	setTimeout(function(){
+		//$('#example').vTicker("stop");
+	}, 2000);
+	
+});
+var sef = 2;
+//$('#test1 > ul').find("li:gt(2):lt(4)").remove();
+//$('#test1 > ul').find("li:lt("+sef+")").remove();
+
+//console.log(12.1 - 12.1 % 1);
+</script>
