@@ -7,9 +7,9 @@ div#test1 ul li  移除margin、padding，只是作为骨架来展示内容，�
 \<div class="wrap"> // 给内层提供显示位置<br>
 &nbsp;&nbsp;&nbsp;\<div id="test1" class="example"> // 作为包裹ul的容器，将移除margin、padding，紧紧包裹ul，如果需要控制显示，可在外层div添加css。<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<ul> // 移除margin、padding<br>
-         \<li></li> // 移除margin、padding<br>
-      \</ul><br>
-   \</div><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<li>\</li> // 移除margin、padding<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\</ul><br>
+&nbsp;&nbsp;&nbsp;\</div><br>
 \</div><br>
 
 # vUpdateRoll-0.1
