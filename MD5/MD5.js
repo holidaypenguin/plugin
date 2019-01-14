@@ -200,6 +200,35 @@ function b64MD5(str) { return binl2b64(coreMD5(str2binl(str))) }
 function b64MD5w(str) { return binl2b64(coreMD5(strw2binl(str))) }
 /* Backward compatibility */
 function calcMD5(str) { return binl2hex(coreMD5(str2binl(str))) }
-module.exports = {
-  hexMD5: hexMD5
-} 
+
+
+
+if(typeof exports === 'object' && typeof module === 'object')
+  module.exports = {
+    hexMD5: hexMD5,
+	hexMD5w: hexMD5w,
+	b64MD5: b64MD5,
+	b64MD5w: b64MD5w,
+	calcMD5: calcMD5
+  };
+else if(typeof define === 'function' && define.amd) {
+  define(["hexMD5"], hexMD5);
+  define(["hexMD5w"], hexMD5w);
+  define(["b64MD5"], b64MD5);
+  define(["b64MD5w"], b64MD5w);
+  define(["calcMD5"], calcMD5);
+} else if(typeof exports === 'object'){
+  exports["hexMD5"] = hexMD5;
+  exports["hexMD5w"] = hexMD5w;
+  exports["b64MD5"] = b64MD5;
+  exports["b64MD5w"] = b64MD5w;
+  exports["calcMD5"] = calcMD5;
+} else {
+  window.MD5 = {
+    hexMD5: hexMD5,
+    hexMD5w: hexMD5w,
+    b64MD5: b64MD5,
+    b64MD5w: b64MD5w,
+    calcMD5: calcMD5
+  };
+}
