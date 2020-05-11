@@ -161,12 +161,14 @@
   <!-- <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script> -->
   <script type="text/javascript">
     function MainCtrl($scope){
-      $scope.total = 200;
+      $scope.total = 
+        0;
       $scope.first = 70;
       $scope.zhongjie = 4;
       $scope.shui = 2;
 
       $scope.years = [
+        {id: 10, name: "10年"},
         {id: 15, name: "15年"},
         {id: 16, name: "16年"},
         {id: 17, name: "17年"},
